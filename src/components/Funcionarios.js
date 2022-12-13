@@ -8,7 +8,13 @@ class Funcionarios extends React.Component {
         super(props);
 
         this.state = {
-            funcionarios: []
+            funcionarios: [
+                { 'id': 1, 'nome': 'Neto Fernadez', 'email': 'neto@empresax.com.br' },
+                { 'id': 2, 'nome': 'Jonh Travolta', 'email': 'Jonh@travolta.com.br' },
+                { 'id': 3, 'nome': 'Eduarda de Andrade', 'email': 'eduardinha@outlook.com' },
+                { 'id': 4, 'nome': 'Simon boulevard', 'email': 'simonsomon@gmail.com' },
+
+            ]
         }
 
     }
@@ -18,28 +24,23 @@ class Funcionarios extends React.Component {
             <Table>
                 <thead>
                     <tr>
-                        <th>Nome</th>
-                        <th>Email</th>
-                        <th>Opções</th>
+                        <td>Nome</td>
+                        <td>Email</td>
+                        <td>Opções</td>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Neto </td>
-                        <td>neto@empresax.com.br </td>
-                    </tr>
-                    <tr>
-                        <td>Jonh </td>
-                        <td>Jonh@travolta.com.br </td>
-                    </tr>
-                    <tr>
-                        <td>Eduardo </td>
-                        <td>eduardinho@outlook.oi.br </td>
-                    </tr>
-                    <tr>
-                        <td>Cassandra </td>
-                        <td>odissey@gmail.com </td>
-                    </tr>
+
+                    {
+                        this.state.funcionarios.map((funcionarios) =>
+                            <tr>
+                                <td>{funcionarios.nome} </td>
+                                <td>{funcionarios.email}</td>
+                                <td>Atualizar e excluir</td>
+                            </tr>
+                        )
+                    }
+                   
                 </tbody>
             </Table>
         )
