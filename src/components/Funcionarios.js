@@ -19,6 +19,8 @@ class Funcionarios extends React.Component {
 
     }
 
+    
+
     render() {
         return (
             <Table>
