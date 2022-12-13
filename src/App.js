@@ -3,17 +3,20 @@ import Sobre from './components/Sobre';
 import Funcionarios from './components/Funcionarios';
 import './App.css';
 import { BrowserRouter, Routes, Link, Route } from 'react-router-dom';
+import {Nav} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div className="App">
       <h1>Minha aplicação react</h1>
       <BrowserRouter>
-        <ul>
-          <li> <Link to="/">Página Inicial</Link> </li>
-          <li><Link to="/funcionarios">Cadastro de Funcionários </Link> </li>
-          <li><Link to="/sobre">Sobre </Link> </li>
-        </ul>
+      
+       <Nav variant='tabs'>
+       <Nav.Link as={Link} to="/"> Página Inicial </Nav.Link>
+       <Nav.Link as={Link} to="/funcionarios"> Cadastro de Funcionarios </Nav.Link>
+       <Nav.Link as={Link} to="/sobre"> Sobre </Nav.Link>
+       </Nav>
 
         <Routes>
         <Route path="/" index element={<Home/>}> </Route>
