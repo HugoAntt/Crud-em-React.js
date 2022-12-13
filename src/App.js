@@ -2,16 +2,27 @@ import Home from './components/Home';
 import Sobre from './components/Sobre';
 import Funcionarios from './components/Funcionarios';
 import './App.css';
+import { BrowserRouter, Routes, Link, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
       <h1>Minha aplicação react</h1>
-      <ul>
-      <li>Página Inicial</li>
-      <li>Cadastro de Alunos</li>
-      <li>Sobre</li>
-      </ul>
+      <BrowserRouter>
+        <ul>
+          <li> <Link to="/">Página Inicial</Link> </li>
+          <li><Link to="/funcionarios">Cadastro de Funcionários </Link> </li>
+          <li><Link to="/sobre">Sobre </Link> </li>
+        </ul>
+
+        <Routes>
+        <Route path="/" index element={<Home/>}> </Route>
+        <Route path="/funcionarios" index element={<Funcionarios/>}> </Route>
+        <Route path="/sobre" index element={<Sobre/>}> </Route>
+
+        </Routes>
+
+      </BrowserRouter>
     </div>
   );
 }
